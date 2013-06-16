@@ -1,0 +1,3 @@
+[submodule "node_modules/kujua-transport/node_modules/node-gammu-json"]
+	path = node_modules/kujua-transport/node_modules/node-gammu-json
+	url = git@github.com:browndav/node-gammu-json.git
