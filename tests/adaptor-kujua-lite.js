@@ -9,7 +9,7 @@ var test_kujua_lite = function () {
 
   var a = adaptor.create('kujua-lite', {
     debug: true, pass: process.argv[2],
-    url: 'http://dev.medicmobile.org:5984/kujua-lite/_design/kujua-lite/_rewrite'
+    url: 'http://dev.medicmobile.org:5984/kujua-dave/_design/kujua-lite/_rewrite'
   });
 
   a.register_transmit_handler(function (_message, _callback) {
