@@ -11,7 +11,7 @@ var test_kujua_lite = function () {
 
   t.load_adaptor('kujua-lite', {
     debug: true, pass: process.argv[2],
-    url: 'http://dev.medicmobile.org:5984/kujua-base_3/_design/kujua-lite/_rewrite'
+    url: 'http://dev.medicmobile.org:5984/kujua-dave/_design/kujua-lite/_rewrite'
   });
 
   t.load_driver('gammu-json', {
