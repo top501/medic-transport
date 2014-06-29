@@ -1,7 +1,7 @@
 {
-  "name": "kujua-transport",
+  "name": "medic-transport",
   "version": "0.0.1",
-  "description": "An SMS transport API for Kujua Lite and Kujua v1",
+  "description": "An SMS transport API for Medic Mobile's mHealth platform",
   "main": "lib/factory.js",
   "scripts": {
     "test": "echo 'No tests available yet' && exit 1"
@@ -15,7 +15,7 @@
     "node-gammu-json": "0.x"
   },
   "readme": "README.md",
-  "repository": "http://github.com/browndav/kujua-transport.git",
+  "repository": "http://github.com/browndav/medic-transport.git",
   "author": "David Brown <david@medicmobile.org>",
   "license": "MIT"
 }
