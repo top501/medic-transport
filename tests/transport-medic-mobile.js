@@ -2,16 +2,16 @@
 var transport = require('../lib/transport');
 
 /**
- * @name test_kujua_lite:
+ * @name test_medic_mobile:
  */
 
-var test_kujua_lite = function () {
+var test_medic_mobile = function () {
 
   var t = transport.create();
 
-  t.load_adaptor('kujua-lite', {
+  t.load_adaptor('medic-mobile', {
     debug: true, pass: process.argv[2],
-    url: 'http://dev.medicmobile.org:5984/kujua-dave/_design/kujua-lite/_rewrite'
+    url: 'http://medic.local/medic/_design/medic/_rewrite'
   });
 
   t.load_driver('gammu-json', {
@@ -26,5 +26,5 @@ if (process.argv.length <= 2) {
   process.exit(1);
 }
 
-test_kujua_lite();
+test_medic_mobile();
 
