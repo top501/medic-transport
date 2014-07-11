@@ -1,6 +1,6 @@
 {
   "name": "medic-transport",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An SMS transport API for Medic Mobile's mHealth platform",
   "main": "lib/factory.js",
   "scripts": {
