@@ -17,4 +17,7 @@ SMSSync setup
   - Enable 'Task Checking'
   - Enable 'Message Results API'
   - Make sure 'Get Reply From Server' is disabled
-- Run node tests/smssync.js to verify
+- Run node tests/smssync.js to verify sending
+- To test receiving using the emulator, from terminal:
+  - telnet localhost 5554
+  - sms send 8765431111 test
