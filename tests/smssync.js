@@ -7,7 +7,7 @@ var driver = require('../lib/driver');
 
 var test_smssync = function () {
 
-  var d = driver.create('smssync', {debug: true});
+  var d = driver.create('smssync', {debug: true, secret: 'secret'} );
 
   d.register_receive_handler(function (_message, _callback) {
     console.log('** driver receive: ', JSON.stringify(_message));
