@@ -12,7 +12,10 @@
     "jsDump": "1.x",
     "underscore": "1.x",
     "request": "2.x",
-    "node-gammu-json": "0.x"
+    "node-gammu-json": "0.x",
+    "express": "latest",
+    "body-parser": "latest",
+    "node-uuid": "latest"
   },
   "readme": "README.md",
   "repository": "http://github.com/browndav/medic-transport.git",
