@@ -21,6 +21,7 @@ SMSSync setup
   - Enable 'Message Results API'
   - Make sure 'Get Reply From Server' is disabled
 - Run node tests/smssync.js to verify sending
+- Edit server.js with correct url/medic credentials
 - Run node server.js to connect SMSSync to MedicMobile
 - To test receiving using the emulator, from terminal:
   - telnet localhost 5554
