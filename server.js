@@ -12,6 +12,9 @@ var transport = factory.create({
     url: 'http://localhost:5984/medic/_design/medic/_rewrite'
   },
   {
+    name: 'simple'
+  },
+  {
     status_check_interval: 1 //default to every minute for testing
   }
 );
