@@ -10,6 +10,9 @@ var transport = factory.create({
     user: 'admin',
     password: 'password',
     url: 'http://localhost:5984/medic/_design/medic/_rewrite'
+  },
+  {
+    status_check_interval: 1 //default to every minute for testing
   }
 );
 transport.start();
