@@ -1,18 +1,24 @@
 var factory = require('../lib/factory');
 var transport = factory.create([{
-  name: 'smssync',
-  debug: true,
-  secret: 'secret'
+  name: 'bad',
+  id: 1,
+  debug: true
+},
+{
+  name: 'bad',
+  id: 2,
+  debug: true
 }],
 {
   name: 'medic-mobile',
-  debug: true,
+  debug: false,
   user: 'admin',
   password: 'password',
   url: 'http://localhost:5984/medic/_design/medic/_rewrite'
 },
 {
-  name: 'simple'
+  name: 'simple',
+  debug: true
 },
 {
   status_check_interval: 1 //default to every minute for testing
