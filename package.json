@@ -15,7 +15,8 @@
     "node-gammu-json": "0.x",
     "express": "latest",
     "body-parser": "latest",
-    "node-uuid": "latest"
+    "node-uuid": "latest",
+    "crypto": "latest"
   },
   "readme": "README.md",
   "repository": "http://github.com/browndav/medic-transport.git",
