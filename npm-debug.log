@@ -1,0 +1,418 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/Users/lman817/Projects/medic-transport',
+5 verbose install   [ 'async',
+5 verbose install     'moment',
+5 verbose install     'jsDump',
+5 verbose install     'underscore',
+5 verbose install     'request',
+5 verbose install     'node-gammu-json',
+5 verbose install     'express',
+5 verbose install     'body-parser',
+5 verbose install     'node-uuid',
+5 verbose install     'crypto',
+5 verbose install     'winston' ] ]
+6 info preinstall medic-transport@0.0.2
+7 verbose readDependencies using package.json deps
+8 verbose already installed skipping underscore@1.x /Users/lman817/Projects/medic-transport
+9 verbose already installed skipping request@2.x /Users/lman817/Projects/medic-transport
+10 verbose already installed skipping node-gammu-json@0.x /Users/lman817/Projects/medic-transport
+11 verbose cache add [ 'express@latest', null ]
+12 verbose cache add name=undefined spec="express@latest" args=["express@latest",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'express@latest',
+13 verbose parsed url   path: 'express@latest',
+13 verbose parsed url   href: 'express@latest' }
+14 verbose cache add [ 'body-parser@latest', null ]
+15 verbose cache add name=undefined spec="body-parser@latest" args=["body-parser@latest",null]
+16 verbose parsed url { protocol: null,
+16 verbose parsed url   slashes: null,
+16 verbose parsed url   auth: null,
+16 verbose parsed url   host: null,
+16 verbose parsed url   port: null,
+16 verbose parsed url   hostname: null,
+16 verbose parsed url   hash: null,
+16 verbose parsed url   search: null,
+16 verbose parsed url   query: null,
+16 verbose parsed url   pathname: 'body-parser@latest',
+16 verbose parsed url   path: 'body-parser@latest',
+16 verbose parsed url   href: 'body-parser@latest' }
+17 verbose cache add name="express" spec="latest" args=["express","latest"]
+18 verbose parsed url { protocol: null,
+18 verbose parsed url   slashes: null,
+18 verbose parsed url   auth: null,
+18 verbose parsed url   host: null,
+18 verbose parsed url   port: null,
+18 verbose parsed url   hostname: null,
+18 verbose parsed url   hash: null,
+18 verbose parsed url   search: null,
+18 verbose parsed url   query: null,
+18 verbose parsed url   pathname: 'latest',
+18 verbose parsed url   path: 'latest',
+18 verbose parsed url   href: 'latest' }
+19 verbose addNamed [ 'express', 'latest' ]
+20 verbose addNamed [ null, null ]
+21 verbose cache add [ 'node-uuid@latest', null ]
+22 verbose cache add name=undefined spec="node-uuid@latest" args=["node-uuid@latest",null]
+23 verbose parsed url { protocol: null,
+23 verbose parsed url   slashes: null,
+23 verbose parsed url   auth: null,
+23 verbose parsed url   host: null,
+23 verbose parsed url   port: null,
+23 verbose parsed url   hostname: null,
+23 verbose parsed url   hash: null,
+23 verbose parsed url   search: null,
+23 verbose parsed url   query: null,
+23 verbose parsed url   pathname: 'node-uuid@latest',
+23 verbose parsed url   path: 'node-uuid@latest',
+23 verbose parsed url   href: 'node-uuid@latest' }
+24 verbose cache add name="body-parser" spec="latest" args=["body-parser","latest"]
+25 verbose parsed url { protocol: null,
+25 verbose parsed url   slashes: null,
+25 verbose parsed url   auth: null,
+25 verbose parsed url   host: null,
+25 verbose parsed url   port: null,
+25 verbose parsed url   hostname: null,
+25 verbose parsed url   hash: null,
+25 verbose parsed url   search: null,
+25 verbose parsed url   query: null,
+25 verbose parsed url   pathname: 'latest',
+25 verbose parsed url   path: 'latest',
+25 verbose parsed url   href: 'latest' }
+26 verbose addNamed [ 'body-parser', 'latest' ]
+27 verbose addNamed [ null, null ]
+28 silly lockFile c30a01ab-express-latest express@latest
+29 verbose lock express@latest /Users/lman817/.npm/c30a01ab-express-latest.lock
+30 silly lockFile 88319797-body-parser-latest body-parser@latest
+31 verbose lock body-parser@latest /Users/lman817/.npm/88319797-body-parser-latest.lock
+32 verbose cache add [ 'crypto@latest', null ]
+33 verbose cache add name=undefined spec="crypto@latest" args=["crypto@latest",null]
+34 verbose parsed url { protocol: null,
+34 verbose parsed url   slashes: null,
+34 verbose parsed url   auth: null,
+34 verbose parsed url   host: null,
+34 verbose parsed url   port: null,
+34 verbose parsed url   hostname: null,
+34 verbose parsed url   hash: null,
+34 verbose parsed url   search: null,
+34 verbose parsed url   query: null,
+34 verbose parsed url   pathname: 'crypto@latest',
+34 verbose parsed url   path: 'crypto@latest',
+34 verbose parsed url   href: 'crypto@latest' }
+35 verbose cache add name="node-uuid" spec="latest" args=["node-uuid","latest"]
+36 verbose parsed url { protocol: null,
+36 verbose parsed url   slashes: null,
+36 verbose parsed url   auth: null,
+36 verbose parsed url   host: null,
+36 verbose parsed url   port: null,
+36 verbose parsed url   hostname: null,
+36 verbose parsed url   hash: null,
+36 verbose parsed url   search: null,
+36 verbose parsed url   query: null,
+36 verbose parsed url   pathname: 'latest',
+36 verbose parsed url   path: 'latest',
+36 verbose parsed url   href: 'latest' }
+37 verbose addNamed [ 'node-uuid', 'latest' ]
+38 verbose addNamed [ null, null ]
+39 silly lockFile 7d01641d-node-uuid-latest node-uuid@latest
+40 verbose lock node-uuid@latest /Users/lman817/.npm/7d01641d-node-uuid-latest.lock
+41 verbose cache add [ 'winston@latest', null ]
+42 verbose cache add name=undefined spec="winston@latest" args=["winston@latest",null]
+43 verbose parsed url { protocol: null,
+43 verbose parsed url   slashes: null,
+43 verbose parsed url   auth: null,
+43 verbose parsed url   host: null,
+43 verbose parsed url   port: null,
+43 verbose parsed url   hostname: null,
+43 verbose parsed url   hash: null,
+43 verbose parsed url   search: null,
+43 verbose parsed url   query: null,
+43 verbose parsed url   pathname: 'winston@latest',
+43 verbose parsed url   path: 'winston@latest',
+43 verbose parsed url   href: 'winston@latest' }
+44 verbose cache add name="crypto" spec="latest" args=["crypto","latest"]
+45 verbose parsed url { protocol: null,
+45 verbose parsed url   slashes: null,
+45 verbose parsed url   auth: null,
+45 verbose parsed url   host: null,
+45 verbose parsed url   port: null,
+45 verbose parsed url   hostname: null,
+45 verbose parsed url   hash: null,
+45 verbose parsed url   search: null,
+45 verbose parsed url   query: null,
+45 verbose parsed url   pathname: 'latest',
+45 verbose parsed url   path: 'latest',
+45 verbose parsed url   href: 'latest' }
+46 verbose addNamed [ 'crypto', 'latest' ]
+47 verbose addNamed [ null, null ]
+48 silly lockFile 9984c26f-crypto-latest crypto@latest
+49 verbose lock crypto@latest /Users/lman817/.npm/9984c26f-crypto-latest.lock
+50 info addNameTag [ 'express', 'latest' ]
+51 info addNameTag [ 'body-parser', 'latest' ]
+52 verbose cache add name="winston" spec="latest" args=["winston","latest"]
+53 verbose parsed url { protocol: null,
+53 verbose parsed url   slashes: null,
+53 verbose parsed url   auth: null,
+53 verbose parsed url   host: null,
+53 verbose parsed url   port: null,
+53 verbose parsed url   hostname: null,
+53 verbose parsed url   hash: null,
+53 verbose parsed url   search: null,
+53 verbose parsed url   query: null,
+53 verbose parsed url   pathname: 'latest',
+53 verbose parsed url   path: 'latest',
+53 verbose parsed url   href: 'latest' }
+54 verbose addNamed [ 'winston', 'latest' ]
+55 verbose addNamed [ null, null ]
+56 silly lockFile 5cafa890-winston-latest winston@latest
+57 verbose lock winston@latest /Users/lman817/.npm/5cafa890-winston-latest.lock
+58 info addNameTag [ 'node-uuid', 'latest' ]
+59 verbose already installed skipping async@0.x /Users/lman817/Projects/medic-transport
+60 info addNameTag [ 'crypto', 'latest' ]
+61 info addNameTag [ 'winston', 'latest' ]
+62 verbose request where is /crypto
+63 verbose request registry https://registry.npmjs.org/
+64 verbose request id 2cf598d21320e521
+65 verbose url raw /crypto
+66 verbose url resolving [ 'https://registry.npmjs.org/', './crypto' ]
+67 verbose url resolved https://registry.npmjs.org/crypto
+68 verbose request where is https://registry.npmjs.org/crypto
+69 info trying registry request attempt 1 at 18:59:22
+70 http GET https://registry.npmjs.org/crypto
+71 verbose already installed skipping moment@2.x /Users/lman817/Projects/medic-transport
+72 verbose already installed skipping jsDump@1.x /Users/lman817/Projects/medic-transport
+73 verbose request where is /node-uuid
+74 verbose request registry https://registry.npmjs.org/
+75 verbose url raw /node-uuid
+76 verbose url resolving [ 'https://registry.npmjs.org/', './node-uuid' ]
+77 verbose url resolved https://registry.npmjs.org/node-uuid
+78 verbose request where is https://registry.npmjs.org/node-uuid
+79 info trying registry request attempt 1 at 18:59:22
+80 verbose etag "77ABA17N180A501ZXOSJ6VV1X"
+81 http GET https://registry.npmjs.org/node-uuid
+82 verbose request where is /winston
+83 verbose request registry https://registry.npmjs.org/
+84 verbose url raw /winston
+85 verbose url resolving [ 'https://registry.npmjs.org/', './winston' ]
+86 verbose url resolved https://registry.npmjs.org/winston
+87 verbose request where is https://registry.npmjs.org/winston
+88 info trying registry request attempt 1 at 18:59:22
+89 verbose etag "1L5FBAOE1JYYJ4MI8CVFGAT79"
+90 http GET https://registry.npmjs.org/winston
+91 verbose request where is /body-parser
+92 verbose request registry https://registry.npmjs.org/
+93 verbose url raw /body-parser
+94 verbose url resolving [ 'https://registry.npmjs.org/', './body-parser' ]
+95 verbose url resolved https://registry.npmjs.org/body-parser
+96 verbose request where is https://registry.npmjs.org/body-parser
+97 info trying registry request attempt 1 at 18:59:22
+98 verbose etag "2B36CLIDT055CQ4DVPUCO0GJ5"
+99 http GET https://registry.npmjs.org/body-parser
+100 verbose request where is /express
+101 verbose request registry https://registry.npmjs.org/
+102 verbose url raw /express
+103 verbose url resolving [ 'https://registry.npmjs.org/', './express' ]
+104 verbose url resolved https://registry.npmjs.org/express
+105 verbose request where is https://registry.npmjs.org/express
+106 info trying registry request attempt 1 at 18:59:22
+107 verbose etag "EX6NFR8HI481W1PGGBRSBMO1T"
+108 http GET https://registry.npmjs.org/express
+109 http 304 https://registry.npmjs.org/winston
+110 silly registry.get cb [ 304,
+110 silly registry.get   { date: 'Thu, 08 Jan 2015 02:59:23 GMT',
+110 silly registry.get     server: 'Apache',
+110 silly registry.get     via: '1.1 varnish',
+110 silly registry.get     'last-modified': 'Thu, 08 Jan 2015 02:45:40 GMT',
+110 silly registry.get     'cache-control': 'max-age=60',
+110 silly registry.get     etag: '"1L5FBAOE1JYYJ4MI8CVFGAT79"',
+110 silly registry.get     age: '28',
+110 silly registry.get     'x-served-by': 'cache-sjc3131-SJC',
+110 silly registry.get     'x-cache': 'HIT',
+110 silly registry.get     'x-cache-hits': '46',
+110 silly registry.get     'x-timer': 'S1420685963.687642,VS0,VE0',
+110 silly registry.get     vary: 'Accept',
+110 silly registry.get     'content-length': '0',
+110 silly registry.get     'keep-alive': 'timeout=10, max=50',
+110 silly registry.get     connection: 'Keep-Alive' } ]
+111 verbose etag https://registry.npmjs.org/winston from cache
+112 http 304 https://registry.npmjs.org/node-uuid
+113 silly registry.get cb [ 304,
+113 silly registry.get   { date: 'Thu, 08 Jan 2015 02:59:23 GMT',
+113 silly registry.get     server: 'Apache',
+113 silly registry.get     via: '1.1 varnish',
+113 silly registry.get     'last-modified': 'Thu, 08 Jan 2015 02:59:23 GMT',
+113 silly registry.get     'cache-control': 'max-age=60',
+113 silly registry.get     etag: '"77ABA17N180A501ZXOSJ6VV1X"',
+113 silly registry.get     age: '19',
+113 silly registry.get     'x-served-by': 'cache-sjc3132-SJC',
+113 silly registry.get     'x-cache': 'HIT',
+113 silly registry.get     'x-cache-hits': '1',
+113 silly registry.get     'x-timer': 'S1420685963.687321,VS0,VE0',
+113 silly registry.get     vary: 'Accept',
+113 silly registry.get     'content-length': '0',
+113 silly registry.get     'keep-alive': 'timeout=10, max=50',
+113 silly registry.get     connection: 'Keep-Alive' } ]
+114 verbose etag https://registry.npmjs.org/node-uuid from cache
+115 verbose addNamed [ 'winston', '0.8.3' ]
+116 verbose addNamed [ '0.8.3', '0.8.3' ]
+117 silly lockFile c3fdbb33-winston-0-8-3 winston@0.8.3
+118 verbose lock winston@0.8.3 /Users/lman817/.npm/c3fdbb33-winston-0-8-3.lock
+119 verbose addNamed [ 'node-uuid', '1.4.2' ]
+120 verbose addNamed [ '1.4.2', '1.4.2' ]
+121 silly lockFile 576d32ce-node-uuid-1-4-2 node-uuid@1.4.2
+122 verbose lock node-uuid@1.4.2 /Users/lman817/.npm/576d32ce-node-uuid-1-4-2.lock
+123 silly lockFile 780ec438-js-org-winston-winston-0-8-3-tgz https://registry.npmjs.org/winston/-/winston-0.8.3.tgz
+124 verbose lock https://registry.npmjs.org/winston/-/winston-0.8.3.tgz /Users/lman817/.npm/780ec438-js-org-winston-winston-0-8-3-tgz.lock
+125 verbose addRemoteTarball [ 'https://registry.npmjs.org/winston/-/winston-0.8.3.tgz',
+125 verbose addRemoteTarball   '64b6abf4cd01adcaefd5009393b1d8e8bec19db0' ]
+126 silly lockFile 576d32ce-node-uuid-1-4-2 node-uuid@1.4.2
+127 silly lockFile 576d32ce-node-uuid-1-4-2 node-uuid@1.4.2
+128 silly lockFile 7d01641d-node-uuid-latest node-uuid@latest
+129 silly lockFile 7d01641d-node-uuid-latest node-uuid@latest
+130 info retry fetch attempt 1 at 18:59:23
+131 verbose fetch to= /var/folders/sn/gq8qfpn52bl9bm8nss6zj6xm0000gn/T/npm-6716-KvXokgnv/registry.npmjs.org/winston/-/winston-0.8.3.tgz
+132 http GET https://registry.npmjs.org/winston/-/winston-0.8.3.tgz
+133 info already installed node-uuid@1.4.2
+134 http 200 https://registry.npmjs.org/crypto
+135 silly registry.get cb [ 200,
+135 silly registry.get   { date: 'Thu, 08 Jan 2015 02:59:23 GMT',
+135 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+135 silly registry.get     etag: '"103F8XWNBUTIA9GENWTEDJP1L"',
+135 silly registry.get     'content-type': 'application/json',
+135 silly registry.get     'cache-control': 'max-age=60',
+135 silly registry.get     'content-length': '2897',
+135 silly registry.get     'accept-ranges': 'bytes',
+135 silly registry.get     via: '1.1 varnish',
+135 silly registry.get     age: '0',
+135 silly registry.get     'x-served-by': 'cache-sjc3131-SJC',
+135 silly registry.get     'x-cache': 'HIT',
+135 silly registry.get     'x-cache-hits': '1',
+135 silly registry.get     'x-timer': 'S1420685963.681567,VS0,VE149',
+135 silly registry.get     vary: 'Accept',
+135 silly registry.get     'keep-alive': 'timeout=10, max=50',
+135 silly registry.get     connection: 'Keep-Alive' } ]
+136 verbose addNamed [ 'crypto', '0.0.3' ]
+137 verbose addNamed [ '0.0.3', '0.0.3' ]
+138 silly lockFile 4d0ed277-crypto-0-0-3 crypto@0.0.3
+139 verbose lock crypto@0.0.3 /Users/lman817/.npm/4d0ed277-crypto-0-0-3.lock
+140 silly lockFile 0e5efc43-pmjs-org-crypto-crypto-0-0-3-tgz https://registry.npmjs.org/crypto/-/crypto-0.0.3.tgz
+141 verbose lock https://registry.npmjs.org/crypto/-/crypto-0.0.3.tgz /Users/lman817/.npm/0e5efc43-pmjs-org-crypto-crypto-0-0-3-tgz.lock
+142 verbose addRemoteTarball [ 'https://registry.npmjs.org/crypto/-/crypto-0.0.3.tgz',
+142 verbose addRemoteTarball   '470a81b86be4c5ee17acc8207a1f5315ae20dbb0' ]
+143 info retry fetch attempt 1 at 18:59:23
+144 verbose fetch to= /var/folders/sn/gq8qfpn52bl9bm8nss6zj6xm0000gn/T/npm-6716-KvXokgnv/registry.npmjs.org/crypto/-/crypto-0.0.3.tgz
+145 http GET https://registry.npmjs.org/crypto/-/crypto-0.0.3.tgz
+146 http 200 https://registry.npmjs.org/body-parser
+147 silly registry.get cb [ 200,
+147 silly registry.get   { date: 'Thu, 08 Jan 2015 02:59:23 GMT',
+147 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+147 silly registry.get     etag: '"3CQN6PTFA5GIYUFRX17N433B3"',
+147 silly registry.get     'content-type': 'application/json',
+147 silly registry.get     'cache-control': 'max-age=60',
+147 silly registry.get     'content-length': '77842',
+147 silly registry.get     'accept-ranges': 'bytes',
+147 silly registry.get     via: '1.1 varnish',
+147 silly registry.get     age: '31',
+147 silly registry.get     'x-served-by': 'cache-sjc3130-SJC',
+147 silly registry.get     'x-cache': 'HIT',
+147 silly registry.get     'x-cache-hits': '1',
+147 silly registry.get     'x-timer': 'S1420685963.689412,VS0,VE0',
+147 silly registry.get     vary: 'Accept',
+147 silly registry.get     'keep-alive': 'timeout=10, max=50',
+147 silly registry.get     connection: 'Keep-Alive' } ]
+148 verbose addNamed [ 'body-parser', '1.10.1' ]
+149 verbose addNamed [ '1.10.1', '1.10.1' ]
+150 silly lockFile 0f993b18-body-parser-1-10-1 body-parser@1.10.1
+151 verbose lock body-parser@1.10.1 /Users/lman817/.npm/0f993b18-body-parser-1-10-1.lock
+152 silly lockFile b9af5de0-dy-parser-body-parser-1-10-1-tgz https://registry.npmjs.org/body-parser/-/body-parser-1.10.1.tgz
+153 verbose lock https://registry.npmjs.org/body-parser/-/body-parser-1.10.1.tgz /Users/lman817/.npm/b9af5de0-dy-parser-body-parser-1-10-1-tgz.lock
+154 http 200 https://registry.npmjs.org/winston/-/winston-0.8.3.tgz
+155 verbose addRemoteTarball [ 'https://registry.npmjs.org/body-parser/-/body-parser-1.10.1.tgz',
+155 verbose addRemoteTarball   'af0c7156b128d946f3c43f5fe0364da00cfa7391' ]
+156 info retry fetch attempt 1 at 18:59:23
+157 verbose fetch to= /var/folders/sn/gq8qfpn52bl9bm8nss6zj6xm0000gn/T/npm-6716-KvXokgnv/registry.npmjs.org/body-parser/-/body-parser-1.10.1.tgz
+158 http GET https://registry.npmjs.org/body-parser/-/body-parser-1.10.1.tgz
+159 http 200 https://registry.npmjs.org/crypto/-/crypto-0.0.3.tgz
+160 silly lockFile 0e5efc43-pmjs-org-crypto-crypto-0-0-3-tgz https://registry.npmjs.org/crypto/-/crypto-0.0.3.tgz
+161 silly lockFile 0e5efc43-pmjs-org-crypto-crypto-0-0-3-tgz https://registry.npmjs.org/crypto/-/crypto-0.0.3.tgz
+162 silly lockFile 4d0ed277-crypto-0-0-3 crypto@0.0.3
+163 silly lockFile 4d0ed277-crypto-0-0-3 crypto@0.0.3
+164 silly lockFile 780ec438-js-org-winston-winston-0-8-3-tgz https://registry.npmjs.org/winston/-/winston-0.8.3.tgz
+165 silly lockFile 780ec438-js-org-winston-winston-0-8-3-tgz https://registry.npmjs.org/winston/-/winston-0.8.3.tgz
+166 silly lockFile 9984c26f-crypto-latest crypto@latest
+167 silly lockFile 9984c26f-crypto-latest crypto@latest
+168 silly lockFile c3fdbb33-winston-0-8-3 winston@0.8.3
+169 silly lockFile c3fdbb33-winston-0-8-3 winston@0.8.3
+170 silly lockFile 5cafa890-winston-latest winston@latest
+171 silly lockFile 5cafa890-winston-latest winston@latest
+172 http 200 https://registry.npmjs.org/body-parser/-/body-parser-1.10.1.tgz
+173 silly lockFile b9af5de0-dy-parser-body-parser-1-10-1-tgz https://registry.npmjs.org/body-parser/-/body-parser-1.10.1.tgz
+174 silly lockFile b9af5de0-dy-parser-body-parser-1-10-1-tgz https://registry.npmjs.org/body-parser/-/body-parser-1.10.1.tgz
+175 silly lockFile 0f993b18-body-parser-1-10-1 body-parser@1.10.1
+176 silly lockFile 0f993b18-body-parser-1-10-1 body-parser@1.10.1
+177 silly lockFile 88319797-body-parser-latest body-parser@latest
+178 silly lockFile 88319797-body-parser-latest body-parser@latest
+179 http 200 https://registry.npmjs.org/express
+180 silly registry.get cb [ 200,
+180 silly registry.get   { date: 'Thu, 08 Jan 2015 02:59:23 GMT',
+180 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+180 silly registry.get     etag: '"C4F8T6N1Q2G5OYIZL3CMXG287"',
+180 silly registry.get     'content-type': 'application/json',
+180 silly registry.get     'cache-control': 'max-age=60',
+180 silly registry.get     'content-length': '448073',
+180 silly registry.get     'accept-ranges': 'bytes',
+180 silly registry.get     via: '1.1 varnish',
+180 silly registry.get     age: '35',
+180 silly registry.get     'x-served-by': 'cache-sjc3130-SJC',
+180 silly registry.get     'x-cache': 'HIT',
+180 silly registry.get     'x-cache-hits': '1',
+180 silly registry.get     'x-timer': 'S1420685963.689451,VS0,VE1',
+180 silly registry.get     vary: 'Accept',
+180 silly registry.get     'keep-alive': 'timeout=10, max=50',
+180 silly registry.get     connection: 'Keep-Alive' } ]
+181 verbose addNamed [ 'express', '4.10.7' ]
+182 verbose addNamed [ '4.10.7', '4.10.7' ]
+183 silly lockFile 9ce688f6-express-4-10-7 express@4.10.7
+184 verbose lock express@4.10.7 /Users/lman817/.npm/9ce688f6-express-4-10-7.lock
+185 silly lockFile 1b6bb80c-s-org-express-express-4-10-7-tgz https://registry.npmjs.org/express/-/express-4.10.7.tgz
+186 verbose lock https://registry.npmjs.org/express/-/express-4.10.7.tgz /Users/lman817/.npm/1b6bb80c-s-org-express-express-4-10-7-tgz.lock
+187 verbose addRemoteTarball [ 'https://registry.npmjs.org/express/-/express-4.10.7.tgz',
+187 verbose addRemoteTarball   '0652f8cd5d0e2949d77b7dea7c5208161ec81ac6' ]
+188 info retry fetch attempt 1 at 18:59:24
+189 verbose fetch to= /var/folders/sn/gq8qfpn52bl9bm8nss6zj6xm0000gn/T/npm-6716-KvXokgnv/registry.npmjs.org/express/-/express-4.10.7.tgz
+190 http GET https://registry.npmjs.org/express/-/express-4.10.7.tgz
+191 http 200 https://registry.npmjs.org/express/-/express-4.10.7.tgz
+192 silly lockFile 1b6bb80c-s-org-express-express-4-10-7-tgz https://registry.npmjs.org/express/-/express-4.10.7.tgz
+193 silly lockFile 1b6bb80c-s-org-express-express-4-10-7-tgz https://registry.npmjs.org/express/-/express-4.10.7.tgz
+194 silly lockFile 9ce688f6-express-4-10-7 express@4.10.7
+195 silly lockFile 9ce688f6-express-4-10-7 express@4.10.7
+196 silly lockFile c30a01ab-express-latest express@latest
+197 silly lockFile c30a01ab-express-latest express@latest
+198 error Error: EACCES, mkdir '/Users/lman817/.npm/body-parser/1.10.1'
+198 error  { [Error: EACCES, mkdir '/Users/lman817/.npm/body-parser/1.10.1']
+198 error   errno: 3,
+198 error   code: 'EACCES',
+198 error   path: '/Users/lman817/.npm/body-parser/1.10.1',
+198 error   parent: 'medic-transport' }
+199 error Please try running this command again as root/Administrator.
+200 error System Darwin 14.0.0
+201 error command "node" "/usr/local/bin/npm" "install"
+202 error cwd /Users/lman817/Projects/medic-transport
+203 error node -v v0.10.35
+204 error npm -v 1.4.28
+205 error path /Users/lman817/.npm/body-parser/1.10.1
+206 error code EACCES
+207 error errno 3
+208 error stack Error: EACCES, mkdir '/Users/lman817/.npm/body-parser/1.10.1'
+209 verbose exit [ 3, true ]

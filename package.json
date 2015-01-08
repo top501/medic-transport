@@ -16,7 +16,8 @@
     "express": "latest",
     "body-parser": "latest",
     "node-uuid": "latest",
-    "crypto": "latest"
+    "crypto": "latest",
+    "winston": "latest"
   },
   "readme": "README.md",
   "repository": "http://github.com/browndav/medic-transport.git",
