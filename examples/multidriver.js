@@ -24,6 +24,7 @@ var transport = factory.create([{
 },
 {
   status_check_interval: 1, //default to every minute for testing
+  log_level: 'debug'
 }
 );
 transport.start();
