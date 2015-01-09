@@ -17,7 +17,8 @@
     "body-parser": "latest",
     "node-uuid": "latest",
     "crypto": "latest",
-    "winston": "latest"
+    "winston": "latest",
+    "libphonenumber": "latest"
   },
   "readme": "README.md",
   "repository": "http://github.com/browndav/medic-transport.git",

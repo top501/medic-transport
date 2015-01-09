@@ -16,6 +16,7 @@ var transport = factory.create([{
   log_level: 'debug'
 },
 {
+  default_country_code: '1',
   status_check_interval: 1, //default to every minute for testing
   log_level: 'debug'
 }
