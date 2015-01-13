@@ -13,12 +13,11 @@
     "underscore": "1.x",
     "request": "2.x",
     "node-gammu-json": "0.x",
-    "express": "latest",
-    "body-parser": "latest",
-    "node-uuid": "latest",
-    "crypto": "latest",
-    "winston": "latest",
-    "libphonenumber": "latest"
+    "express": "4.x",
+    "body-parser": "1.x",
+    "node-uuid": "1.x",
+    "winston": "0.x",
+    "libphonenumber": "0.x"
   },
   "readme": "README.md",
   "repository": "http://github.com/browndav/medic-transport.git",
