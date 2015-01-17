@@ -7,7 +7,7 @@ var driver = require('../lib/driver');
 
 var test_gammu_json = function () {
 
-  var d = driver.create('gammu-json');
+  var d = driver.create('gammu-json', null);
 
   d.register_receive_handler(function (_message, _callback) {
     console.log('** driver receive: ', JSON.stringify(_message));
@@ -27,4 +27,3 @@ var test_gammu_json = function () {
 };
 
 test_gammu_json();
-

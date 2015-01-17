@@ -4,7 +4,7 @@ medic-transport
 An SMS transport layer, for use with Medic Mobile's Linux-based operating
 system and web applications.
 
-See the [tests](tests) for example usage.
+See the [examples](examples) for example usage.
 
 SMSSync setup
 ===============
