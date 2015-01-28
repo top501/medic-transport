@@ -7,7 +7,7 @@ var transport = factory.create([{
 {
   name: 'medic-mobile',
   user: 'admin',
-  password: 'password',
+  password: 'pass',
   url: 'http://localhost:5984/medic/_design/medic/_rewrite',
   log_level: 'debug'
 },

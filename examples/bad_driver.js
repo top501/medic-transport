@@ -1,5 +1,6 @@
 /**
 * @namespace bad driver:
+*   This driver is mean to test error handing. It does lots of bad things.
 */
 exports.prototype = {
 
