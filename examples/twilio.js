@@ -4,7 +4,9 @@ var transport = factory.create([{
   sid: 'ACc27ce8143c2f05d804a4828fc0f0f546',
   token: '986200d750694da9647988be4372bb51',
   phone: '+1 650-276-3342',
-  log_level: 'debug'
+  log_level: 'debug',
+  port: 9001,
+  url: '/transport/twilio'
 }],
 {
   name: 'medic-mobile',
@@ -19,7 +21,7 @@ var transport = factory.create([{
 },
 {
   default_country_code: '1',
-  status_check_interval: 1, //default to every minute for testing
+  status_check_interval: 60,
   log_level: 'debug'
 }
 );
