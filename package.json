@@ -18,7 +18,8 @@
     "node-uuid": "1.x",
     "winston": "0.x",
     "libphonenumber": "0.x",
-    "twilio": "1.x"
+    "twilio": "1.x",
+    "lazy": "1.x"
   },
   "readme": "README.md",
   "repository": "http://github.com/browndav/medic-transport.git",
