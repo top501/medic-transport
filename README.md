@@ -15,7 +15,6 @@ SMSSync setup
      Keywords: ''
      URL: http://10.0.2.2:3000
  - In settings:
-  - Enable 'SMS Delivery Report'
   - Enable 'Auto Sync'
   - Enable 'Task Checking'
   - Enable 'Message Results API'
@@ -25,3 +24,11 @@ SMSSync setup
 - To test receiving using the emulator, from terminal:
   - telnet localhost 5554
   - sms send <number> <message>
+
+Running medic on a server
+===========================
+
+node lib/server.js <configuration file> 
+
+example:
+node lib/server.js ./config/medic
