@@ -2,7 +2,7 @@
   "adaptor": {
     "name": "medic-mobile",
     "url": "http://localhost:5984/medic/_design/medic/_rewrite",
-    "log_level": "info"
+    "log_level": "debug"
   },
   "transport": {
     "default_country_code": "1",
