@@ -84,7 +84,7 @@ describe('medic-mobile', function() {
         done();
       }, 200);
     });
-    it('should call transmit handler for messages marked "failure"', function(done) {
+    it('should call transmit handler if some messages are successful and some failure', function(done) {
       mock_http.mock({
         'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE,
         'GET http://localhost:5999/weird-callback': [
@@ -96,7 +96,28 @@ describe('medic-mobile', function() {
         ]
       });
 
-      var transmit_handler_called = false;
+      var transmit_handler_calls = 0;
+      mm.register_transmit_handler(function(message, callback) {
+        if(++transmit_handler_calls & 1 === 0) {
+          callback(false, { status:'success' });
+        } else {
+          callback(false, { status:'failure' });
+        }
+      });
+      mm.register_error_handler(function(error) {
+        return done(error);
+      });
+
+      // when
+      mm.start();
+    });
+    it('should not call transmit handler if all messages are failure', function(done) {
+      mock_http.mock({
+        'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE,
+        'GET http://localhost:5999/weird-callback': error_and_done(done,
+            'Should not make callback when all messages are failures.')
+      });
+
       mm.register_transmit_handler(function(message, callback) {
         callback(false, { status:'failure' });
       });
@@ -161,7 +182,6 @@ describe('medic-mobile', function() {
       });
       var sendAttempts = 0;
 
-      var transmit_handler_called = false;
       mm.register_transmit_handler(function(message, callback) {
         ++sendAttempts;
         callback(false, { status:'failure' });
