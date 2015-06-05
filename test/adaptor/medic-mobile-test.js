@@ -132,7 +132,7 @@ describe('medic-mobile', function() {
       // then
       setTimeout(done, 200);
     });
-    it('should not call transmit handler when there are transmit errors', function(done) {
+    it('should not call transmit handler when all messages give transmit errors', function(done) {
       // setup
       this.timeout(0);
       mock_http.mock({
@@ -147,6 +147,31 @@ describe('medic-mobile', function() {
 
       // then
       setTimeout(done, 200);
+    });
+    it('should call transmit handler when some messages give transmit errors but others succeed', function(done) {
+      // setup
+      this.timeout(0);
+      mock_http.mock({
+        'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE,
+        'GET http://localhost:5999/weird-callback': 'OK'
+      });
+      var transmit_handler_call_count = 0;
+      mm.register_transmit_handler(function(message, callback) {
+        if(transmit_handler_call_count++ === 2) {
+          callback(new Error('Manufactured error for testing'));
+        } else {
+          callback(false, { status:'success', total_sent:1 });
+        }
+      });
+
+      // when
+      mm.start();
+
+      // then
+      setTimeout(function() {
+        assert.equal(mock_http.handlers.GET['http://localhost:5999/weird-callback'].count, 1);
+        done();
+      }, 200);
     });
     it('should not call transmit error handler when there are transmit errors', function(done) {
       // setup
