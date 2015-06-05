@@ -74,7 +74,7 @@ describe('medic-mobile', function() {
             assert.notOk(actual.random_key);
           }
         }
-        callback(null, { status:'success', total_sent:transmit_handler_calls.length });
+        callback(null, { status:'success', total_sent:1 });
       });
 
       mm.start();
@@ -98,10 +98,10 @@ describe('medic-mobile', function() {
 
       var transmit_handler_calls = 0;
       mm.register_transmit_handler(function(message, callback) {
-        if(++transmit_handler_calls & 1 === 0) {
-          callback(false, { status:'success' });
+        if(++transmit_handler_calls % 2 === 0) {
+          callback(false, { status:'success', total_sent:1 });
         } else {
-          callback(false, { status:'failure' });
+          callback(false, { status:'failure', total_sent:0 });
         }
       });
       mm.register_error_handler(function(error) {
@@ -112,6 +112,7 @@ describe('medic-mobile', function() {
       mm.start();
     });
     it('should not call transmit handler if all messages are failure', function(done) {
+      this.timeout(0);
       mock_http.mock({
         'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE,
         'GET http://localhost:5999/weird-callback': error_and_done(done,
@@ -119,7 +120,7 @@ describe('medic-mobile', function() {
       });
 
       mm.register_transmit_handler(function(message, callback) {
-        callback(false, { status:'failure' });
+        callback(false, { status:'failure', total_sent:0 });
       });
       mm.register_error_handler(function(error) {
         return done(error);
@@ -127,6 +128,9 @@ describe('medic-mobile', function() {
 
       // when
       mm.start();
+
+      // then
+      setTimeout(done, 200);
     });
     it('should not call transmit handler when there are transmit errors', function(done) {
       // setup
@@ -184,7 +188,7 @@ describe('medic-mobile', function() {
 
       mm.register_transmit_handler(function(message, callback) {
         ++sendAttempts;
-        callback(false, { status:'failure' });
+        callback(false, { status:'failure', total_sent:0 });
       });
 
       // when
@@ -213,7 +217,7 @@ describe('medic-mobile', function() {
         if(error) return done(error);
 
         // then
-        assert.deepEqual(response, {total_sent:1, status:'success'});
+        assert.deepEqual(response, { status:'success', total_sent:1 });
 
         var args = request.post.firstCall.args;
         assert.equal(args.length, 2);
