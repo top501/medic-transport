@@ -55,7 +55,7 @@ describe('medic-mobile', function() {
           function(url, options) {
             assert.deepEqual(options, TEST_CALLBACK_OBJ);
           },
-          error_and_done(done, "Should only make one callback.")
+          error_and_done(done, 'Should only make one callback.')
         ]
       });
 
@@ -69,7 +69,7 @@ describe('medic-mobile', function() {
             actual = transmit_handler_calls[i];
             assert.equal(actual.uuid, i);
             assert.equal(actual.content, ALPHABET.charAt(i));
-            assert.equal(actual.to, ""+i);
+            assert.equal(actual.to, ''+i);
             assert.ok(actual.timestamp);
             assert.notOk(actual.random_key);
           }
@@ -92,13 +92,12 @@ describe('medic-mobile', function() {
             assert.deepEqual(options, TEST_CALLBACK_OBJ);
             return done();
           },
-          error_and_done(done, "Should only make one callback.")
+          error_and_done(done, 'Should only make one callback.')
         ]
       });
 
       var transmit_handler_called = false;
       mm.register_transmit_handler(function(message, callback) {
-        //done(new Error("Should not call the transmit handler for a bad message!"));
         callback(false, { status:'failure' });
       });
       mm.register_error_handler(function(error) {
@@ -115,7 +114,7 @@ describe('medic-mobile', function() {
         'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE
       });
       mm.register_transmit_handler(function(message, callback) {
-        callback(new Error("Manufactured error for testing"));
+        callback(new Error('Manufactured error for testing'));
       });
 
       // when
@@ -131,11 +130,11 @@ describe('medic-mobile', function() {
         'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE
       });
       mm.register_transmit_handler(function(message, callback) {
-        callback(new Error("Manufactured error for testing"));
+        callback(new Error('Manufactured error for testing'));
       });
       var error_handler_call_count = 0;
       mm.register_error_handler(function(error) {
-        assert.equal(error.toString(), "Error: Manufactured error for testing");
+        assert.equal(error.toString(), 'Error: Manufactured error for testing');
         ++error_handler_call_count;
       });
 
