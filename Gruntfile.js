@@ -14,9 +14,11 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-mocha');
 
   grunt.registerTask('default', [
-    'jshint'
+    'jshint',
+    'mocha'
   ]);
 
   grunt.registerTask('ci', 'Test for CI', [
