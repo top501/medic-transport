@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "async": "0.x",
-    "express": "4.x",
     "moment": "2.x",
     "jsDump": "1.x",
     "underscore": "1.x",
