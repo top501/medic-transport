@@ -6,7 +6,7 @@ node_js:
 before_script:
   - npm install -g grunt-cli
 
-script: "mocha --timeout 200 lib/**/*.js && grunt ci"
+script: "npm test && grunt ci"
 
 notifications:
   webhooks:
