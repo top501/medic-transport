@@ -4,7 +4,7 @@
   "description": "An SMS transport API for Medic Mobile's mHealth platform",
   "main": "lib/factory.js",
   "scripts": {
-    "test": "echo 'No tests available yet' && exit 1"
+    "test": "mocha --timeout 200 test/**"
   },
   "dependencies": {
     "async": "0.x",
@@ -18,6 +18,8 @@
     "grunt": "0.4.5",
     "grunt-contrib-jshint": "0.11.x",
     "grunt-mocha": "0.4.x"
+    "sinon": "1.14.x",
+    "chai": "2.1.x"
   },
   "readme": "README.md",
   "repository": "http://github.com/browndav/medic-transport.git",
