@@ -7,6 +7,7 @@ var chai = require('chai'),
 chai.config.includeStack = true;
 
 describe('medic-mobile', function() {
+  'use strict';
   var TEST_MESSAGE = {content:'', from:'', timestamp:''},
       TEST_URL_ROOT = 'http://localhost/nonsense',
       TEST_CALLBACK_OBJ = {url:'http://localhost:5999/weird-callback',

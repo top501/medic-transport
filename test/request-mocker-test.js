@@ -6,6 +6,7 @@ var chai = require('chai'),
     AUTOJSON = false;
 
 describe('mocker', function() {
+  'use strict';
   beforeEach(function() {
     this.timeout(500);
   });

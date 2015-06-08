@@ -7,6 +7,7 @@ var request = require('request'),
     WILDCARD_MATCH = new RegExp(/.*\*\*$/);
 
 module.exports = (function() {
+  'use strict';
   var self = {},
   handle_action = function(handler, url, options, callback) {
     if(DEBUG) console.log('handle_action() :: url=' + url);
