@@ -10,18 +10,15 @@ module.exports = function(grunt) {
         'lib/**/*.js',
         'test/**/*.js',
       ]
-    }
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-mocha');
 
   grunt.registerTask('default', [
     'jshint',
-    'mocha'
   ]);
 
-  grunt.registerTask('ci', 'Test for CI', [
-    'default'
+  grunt.registerTask('ci', [
   ]);
 }
