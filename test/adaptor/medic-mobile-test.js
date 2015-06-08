@@ -10,7 +10,7 @@ describe('medic-mobile', function() {
   var TEST_MESSAGE = {content:'', from:'', timestamp:''},
       TEST_URL_ROOT = 'http://localhost/nonsense',
       TEST_CALLBACK_OBJ = {url:'http://localhost:5999/weird-callback',
-          headers:{}, body:'{"docs":["asdf","123"]}'};
+          headers:{}, body:'{"docs":["asdf","123"]}'},
       mm = null;
 
   beforeEach(function() {
@@ -25,7 +25,7 @@ describe('medic-mobile', function() {
 
   var error_and_done = function(done, error_message) {
     return function() { return done(new Error(error_message)); };
-  }
+  };
 
   var MESSAGES_TO_SEND_ONCE = [
     {

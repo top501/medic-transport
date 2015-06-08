@@ -109,7 +109,7 @@ module.exports = (function() {
   self.restore = function() {
     self.handlers = {};
     _.each(SUPPORTED_VERBS, function(verb) {
-      request[verb].restore && request[verb].restore();
+      if(request[verb].restore) request[verb].restore();
       self.handlers[verb.toUpperCase()] = {};
     });
   };

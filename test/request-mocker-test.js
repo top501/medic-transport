@@ -92,7 +92,7 @@ describe('mocker', function() {
   it('should call functions listed as responses', function(done) {
     // given
     mock_request.mock({
-      'GET http://example.com/path': new function() { done(); }
+      'GET http://example.com/path': function() { done(); }
     });
 
     // when
