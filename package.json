@@ -14,6 +14,10 @@
     "request": "2.x",
     "node-gammu-json": "0.x"
   },
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-jshint": "0.11.x"
+  },
   "readme": "README.md",
   "repository": "http://github.com/browndav/medic-transport.git",
   "author": "David Brown <david@medicmobile.org>",
