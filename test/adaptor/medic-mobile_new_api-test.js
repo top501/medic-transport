@@ -28,7 +28,7 @@ describe('medic-mobile', function() {
     describe('old API', function(done) {
       beforeEach(function() {
         mock_http.mock({
-          'HEAD http://localhost/nonsense/messages': function(url, options, callback) {
+          'HEAD http://localhost/nonsense/api/v1/messages': function(url, options, callback) {
             callback(false, { statusCode:404 });
           }
         });
@@ -48,7 +48,7 @@ describe('medic-mobile', function() {
     describe('new API', function(done) {
       beforeEach(function() {
         mock_http.mock({
-          'HEAD http://localhost/nonsense/messages': []
+          'HEAD http://localhost/nonsense/api/v1/messages': []
         });
       });
       it('should detect the new API', function(done) {
