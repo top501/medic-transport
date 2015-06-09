@@ -8,7 +8,6 @@ var chai = require('chai'),
 
     AUTOJSON = false,
     TEST_URL_ROOT = 'http://localhost/nonsense',
-    TODO = function(done) { done(new Error('Not Yet Implemented')); },
     MESSAGES_PATH = '/api/v1/records',
     MESSAGES_URL = TEST_URL_ROOT + MESSAGES_PATH,
     PENDING_PATH = '/api/v1/messages?state=pending',
@@ -154,11 +153,6 @@ describe('medic-mobile with new API', function() {
         adapter.start();
       });
     });
-    describe('when ' + PENDING_PATH + ' provides bad JSON', function() {
-      it('should call the callback with a suitable error', function(done) {
-        TODO(done);
-      });
-    });
     describe('when ' + PENDING_PATH + ' provides a message', function() {
       it('should be passed to the transmit handler', function(done) {
         // setup
@@ -245,12 +239,6 @@ describe('medic-mobile with new API', function() {
 
         // when
         adapter.start();
-      });
-      it('should retry sending three times', function(done) {
-        TODO(done);
-      });
-      it('should notify error handler if it still fails', function(done) {
-        TODO(done);
       });
     });
   });
