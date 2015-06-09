@@ -8,7 +8,9 @@ var chai = require('chai'),
     MESSAGES_PATH = '/api/v1/records',
     MESSAGES_URL = TEST_URL_ROOT + MESSAGES_PATH,
     PENDING_PATH = '/api/v1/messages?state=pending',
-    PENDING_URL = TEST_URL_ROOT + PENDING_PATH;
+    PENDING_URL = TEST_URL_ROOT + PENDING_PATH,
+    API_TEST_PATH = '/api/v1/messages',
+    API_TEST_URL = TEST_URL_ROOT + API_TEST_PATH;
 
 describe('mock-webapp', function() {
   var mock_webapp;
@@ -17,9 +19,14 @@ describe('mock-webapp', function() {
     mock_webapp = new MockWebapp({ url:TEST_URL_ROOT });
   });
 
-  it('should provide mock_webapp implementation', function() {
-    assert.ok(mock_webapp);
+  it('should respond OK to HEAD request to ' + API_TEST_PATH, function(done) {
+     request.head(API_TEST_URL, function(err, resp) {
+       assert.notOk(err);
+       assert.equal(resp.statusCode, 200);
+       done();
+     });
   });
+
   it('should have a poll_count available', function() {
     assert.equal(typeof mock_webapp.poll_count(), 'number');
   });
@@ -31,6 +38,17 @@ describe('mock-webapp', function() {
     assert.equal(mock_webapp.poll_count(), 2);
     request.get(PENDING_URL);
     assert.equal(mock_webapp.poll_count(), 3);
+  });
+  it('should not share vars with other instances', function() {
+    // given
+    request.get(PENDING_URL);
+    assert.equal(mock_webapp.poll_count(), 1);
+
+    // when
+    mock_webapp = new MockWebapp({ url:TEST_URL_ROOT });
+
+    // then
+    assert.equal(mock_webapp.poll_count(), 0);
   });
   it('should only count pollings to the correct URL', function() {
     assert.equal(mock_webapp.poll_count(), 0);

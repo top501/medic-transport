@@ -1,6 +1,7 @@
 var mock_http = require('./request-mocker.js'),
     _ = require('underscore'),
 
+    API_TEST_PATH = '/api/v1/messages',
     PENDING_PATH = '/api/v1/messages?state=pending',
     MESSAGES_PATH = '/api/v1/records',
     STATE_PATH = '/api/v1/messages/state/';
@@ -15,6 +16,7 @@ module.exports = function(options) {
   self.state_updates = {};
   self.received = [];
 
+  self.API_TEST_URL = options.url + API_TEST_PATH;
   self.PENDING_URL = options.url + PENDING_PATH;
   self.STATE_URL = options.url + STATE_PATH;
   self.MESSAGES_URL = options.url + MESSAGES_PATH;
@@ -29,6 +31,7 @@ module.exports = function(options) {
     fail_deliveries = true;
   };
 
+  behaviour['HEAD ' + self.API_TEST_URL] = [];
   behaviour['GET ' + self.PENDING_URL] = function() {
     var next = pending_message_queue.shift() || [];
     return _.isArray(next) ? next : [next];
