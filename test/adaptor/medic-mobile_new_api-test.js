@@ -199,6 +199,8 @@ describe('medic-mobile with new API', function() {
             assert.equal(message.content, 'ho');
             done();
           }
+
+          callback(false, { total_sent:1 });
         });
 
         // when
