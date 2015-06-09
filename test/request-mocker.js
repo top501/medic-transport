@@ -3,7 +3,7 @@ var request = require('request'),
     sinon = require('sinon'),
     DEBUG = false,
     AUTOJSON = false,
-    SUPPORTED_VERBS = ['get', 'post', 'put'],
+    SUPPORTED_VERBS = ['get', 'post', 'put', 'head'],
     WILDCARD_MATCH = new RegExp(/.*\*\*$/);
 
 module.exports = (function() {
@@ -13,34 +13,32 @@ module.exports = (function() {
     if(DEBUG) console.log('handle_action() :: url=' + url);
 
     var hit_count = handler.count++,
-        actions = handler.actions,
-        response_body;
+        actions = handler.actions;
 
     if(_.isArray(handler.actions)) {
       if(hit_count < actions.length) {
-        response_body = perform_action(actions[hit_count], url, options);
+        perform_action(actions[hit_count], url, options, callback);
       } else {
-        response_body = perform_action(actions[actions.length-1], url, options);
+        perform_action(actions[actions.length-1], url, options, callback);
       }
-    } else response_body = perform_action(actions, url, options);
+    } else perform_action(actions, url, options, callback);
+  },
+  perform_action = function(action, url, options, callback) {
+    var response_body;
+    if(typeof action === 'function') {
+      if(action.length === 3) {
+        action(url, options, callback);
+        return;
+      }
+      response_body = action(url, options);
+    } else {
+      response_body = action;
+    }
 
-    // TODO set response-type as JSON
     callback(null, {
             headers: { 'Content-type': 'application/json' },
             statusCode:200 },
         AUTOJSON ? response_body : JSON.stringify(response_body));
-  },
-  perform_action = function(action, url, options) {
-    if(typeof action === 'function') {
-      if(DEBUG) console.log('perform_action() returning result of "action":' + action);
-      return action(url, options);
-    } else if(typeof action === 'string') {
-      if(DEBUG) console.log('perform_action() returning "action":' + action);
-      return action;
-    } else {
-      if(DEBUG) console.log('perform_action() returning "action":' + JSON.stringify(action));
-      return action;
-    }
   },
   stubs_for = function(verbs) {
     _.each(verbs, function(verb) {
