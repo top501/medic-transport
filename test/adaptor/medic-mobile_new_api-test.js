@@ -206,11 +206,6 @@ describe('medic-mobile with new API', function() {
         // when
         adapter.start();
       });
-      it('should not stack overflow even with many messages', function(done) {
-        // TODO this potential bug may be why async.eachSeries is used instead
-        // of _.each?
-        TODO(done);
-      });
     });
     describe('when a message transmits successfully', function() {
       it('should update state with medic-webapp', function(done) {
