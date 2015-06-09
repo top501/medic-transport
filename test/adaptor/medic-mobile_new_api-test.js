@@ -191,10 +191,10 @@ describe('medic-mobile with new API', function() {
         adapter.register_transmit_handler(function(message, callback) {
           // then
           ++transmit_handler_calls;
-          if(transmit_handler_calls == 1) {
+          if(transmit_handler_calls === 1) {
             assert.equal(message.to, '+123');
             assert.equal(message.content, 'hi');
-          } else if(transmit_handler_calls == 2) {
+          } else if(transmit_handler_calls === 2) {
             assert.equal(message.to, '+456');
             assert.equal(message.content, 'ho');
             done();
