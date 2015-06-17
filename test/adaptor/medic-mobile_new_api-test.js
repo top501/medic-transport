@@ -104,7 +104,7 @@ describe('medic-mobile', function() {
 
         // then
         setTimeout(function() {
-          assert.equal(adapter._api_version, 'old');
+          assert.equal(adapter._api_version, 'legacy');
           done();
         }, 100);
       }, 200);
@@ -117,7 +117,7 @@ describe('medic-mobile', function() {
 
         // when
         adapter._detect_api_version(function(version) {
-          assert.equal(version, 'old');
+          assert.equal(version, 'legacy');
           done();
         });
       });
@@ -128,7 +128,7 @@ describe('medic-mobile', function() {
       it('should detect the new API', function(done) {
         // when
         adapter._detect_api_version(function(version) {
-          assert.equal(version, 'new');
+          assert.equal(version, 'v1');
           done();
         });
       });
