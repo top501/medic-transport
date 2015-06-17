@@ -31,6 +31,7 @@ module.exports = function(options) {
     fail_deliveries = true;
   };
 
+  behaviour['HEAD ' + options.url] = [];
   behaviour['HEAD ' + self.API_TEST_URL] = [];
   behaviour['GET ' + self.PENDING_URL] = function() {
     var next = pending_message_queue.shift() || [];

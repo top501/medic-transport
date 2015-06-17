@@ -19,6 +19,14 @@ describe('mock-webapp', function() {
     mock_webapp = new MockWebapp({ url:TEST_URL_ROOT });
   });
 
+  it('should respond OK to HEAD request to ' + TEST_URL_ROOT, function(done) {
+     request.head(TEST_URL_ROOT, function(err, resp) {
+       assert.notOk(err);
+       assert.equal(resp.statusCode, 200);
+       done();
+     });
+  });
+
   it('should respond OK to HEAD request to ' + API_TEST_PATH, function(done) {
      request.head(API_TEST_URL, function(err, resp) {
        assert.notOk(err);
