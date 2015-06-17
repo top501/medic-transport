@@ -8,6 +8,7 @@ var chai = require('chai'),
 
     AUTOJSON = false,
     TEST_URL_ROOT = 'http://localhost/nonsense',
+    API_AVAILABLE_URL = TEST_URL_ROOT,
     MESSAGES_PATH = '/api/v1/records',
     MESSAGES_URL = TEST_URL_ROOT + MESSAGES_PATH,
     PENDING_PATH = '/api/v1/messages?state=pending',
@@ -19,54 +20,42 @@ var chai = require('chai'),
 
 
 describe('medic-mobile', function() {
+  beforeEach(function() {
+    adapter = adaptor.create('medic-mobile',
+        {pass:'secret', url:TEST_URL_ROOT, interval:100});
+  });
   afterEach(function() {
     if(adapter) adapter.stop();
   });
 
   describe('API detection', function() {
-    describe('old API', function(done) {
-      beforeEach(function() {
+    var api = {
+      notStarted: function() {
         mock_http.mock({
+          'HEAD http://localhost/nonsense': function(url, options, callback) {
+            callback(new Error('connection timeout')); // TODO check if this is realistic
+          }
+        });
+      },
+      oldEnabled: function() {
+        mock_http.mock({
+          'HEAD http://localhost/nonsense': [],
           'HEAD http://localhost/nonsense/api/v1/messages': function(url, options, callback) {
             callback(false, { statusCode:404 });
           }
         });
-      });
-      it('should detect the old API', function(done) {
-        // given
-        adapter = adaptor.create('medic-mobile',
-            {pass:'secret', url:TEST_URL_ROOT, interval:100});
-
-        // when
-        adapter._detect_api_version(function(version) {
-          assert.equal(version, 'old');
-          done();
-        });
-      });
-    });
-    describe('new API', function(done) {
-      beforeEach(function() {
+      },
+      newEnabled: function() {
         mock_http.mock({
+          'HEAD http://localhost/nonsense': [],
           'HEAD http://localhost/nonsense/api/v1/messages': []
         });
-      });
-      it('should detect the new API', function(done) {
-        // given
-        adapter = adaptor.create('medic-mobile',
-            {pass:'secret', url:TEST_URL_ROOT, interval:100});
+      }
+    };
 
-        // when
-        adapter._detect_api_version(function(version) {
-          assert.equal(version, 'new');
-          done();
-        });
-      });
-    });
     it('should happen on startup', function(done) {
         // given
         this.timeout(0);
-        adapter = adaptor.create('medic-mobile',
-            {pass:'secret', url:TEST_URL_ROOT, interval:100});
 
         // then
         assert.notOk(adapter._api_version);
@@ -79,6 +68,70 @@ describe('medic-mobile', function() {
           assert.ok(adapter._api_version);
           done();
         }, 200);
+    });
+
+    it('should repeat if API service cannot be contacted', function(done) {
+      // given
+      this.timeout(0);
+      api.notStarted();
+
+      // when
+      adapter.start();
+
+      // then
+      setTimeout(function() {
+        var apiCheckCount = mock_http.handlers.HEAD[API_AVAILABLE_URL].count;
+        assert.isAbove(apiCheckCount, 3);
+        assert.isBelow(apiCheckCount, 7);
+        done();
+      }, 500);
+    });
+
+    it('should resolve finally if API service comes alive', function(done) {
+      // given
+      this.timeout(0);
+      api.notStarted();
+
+      // when
+      adapter.start();
+
+      // then
+      setTimeout(function() {
+        assert.equal(adapter._api_version, 'undetermined');
+
+        // when
+        api.oldEnabled();
+
+        // then
+        setTimeout(function() {
+          assert.equal(adapter._api_version, 'old');
+          done();
+        }, 100);
+      }, 200);
+    });
+
+    describe('old API', function(done) {
+      beforeEach(api.oldEnabled);
+      it('should detect the old API', function(done) {
+        // given
+
+        // when
+        adapter._detect_api_version(function(version) {
+          assert.equal(version, 'old');
+          done();
+        });
+      });
+    });
+
+    describe('new API', function(done) {
+      beforeEach(api.newEnabled);
+      it('should detect the new API', function(done) {
+        // when
+        adapter._detect_api_version(function(version) {
+          assert.equal(version, 'new');
+          done();
+        });
+      });
     });
   });
 });
