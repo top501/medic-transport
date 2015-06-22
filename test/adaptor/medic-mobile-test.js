@@ -40,9 +40,12 @@ describe('medic-mobile', function() {
 
   describe('receiving', function() {
     it('should poll by GETting /add', function(done) {
-      sinon.stub(request, 'get', function(options) {
-        assert.equal(options.url, TEST_URL_ROOT + '/add');
-        return done();
+      mock_http.mock({
+        'HEAD http://localhost/nonsense': [],
+        'GET http://localhost/nonsense/add': function(url) {
+          assert.equal(url, TEST_URL_ROOT + '/add');
+          done();
+        }
       });
       mm.start();
     });
@@ -51,6 +54,7 @@ describe('medic-mobile', function() {
       this.timeout(0);
 
       mock_http.mock({
+        'HEAD http://localhost/nonsense': [],
         'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE,
         'GET http://localhost:5999/weird-callback': [
           function(url, options) {
@@ -87,6 +91,7 @@ describe('medic-mobile', function() {
     });
     it('should call transmit handler if some messages are successful and some failure', function(done) {
       mock_http.mock({
+        'HEAD http://localhost/nonsense': [],
         'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE,
         'GET http://localhost:5999/weird-callback': [
           function(url, options) {
@@ -115,6 +120,7 @@ describe('medic-mobile', function() {
     it('should not call transmit handler if all messages are failure', function(done) {
       this.timeout(0);
       mock_http.mock({
+        'HEAD http://localhost/nonsense': [],
         'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE,
         'GET http://localhost:5999/weird-callback': error_and_done(done,
             'Should not make callback when all messages are failures.')
@@ -137,6 +143,7 @@ describe('medic-mobile', function() {
       // setup
       this.timeout(0);
       mock_http.mock({
+        'HEAD http://localhost/nonsense': [],
         'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE
       });
       mm.register_transmit_handler(function(message, callback) {
@@ -153,6 +160,7 @@ describe('medic-mobile', function() {
       // setup
       this.timeout(0);
       mock_http.mock({
+        'HEAD http://localhost/nonsense': [],
         'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE,
         'GET http://localhost:5999/weird-callback': 'OK'
       });
@@ -178,6 +186,7 @@ describe('medic-mobile', function() {
       // setup
       this.timeout(0);
       mock_http.mock({
+        'HEAD http://localhost/nonsense': [],
         'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE
       });
       mm.register_transmit_handler(function(message, callback) {
@@ -206,9 +215,10 @@ describe('medic-mobile', function() {
       // setup
       this.timeout(0);
       mock_http.mock({
-          'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE,
-          'GET http://localhost:5899/weird-callback': error_and_done(done,
-              'Should not have callback with failed messages.')
+        'HEAD http://localhost/nonsense': [],
+        'GET http://localhost/nonsense/add': MESSAGES_TO_SEND_ONCE,
+        'GET http://localhost:5899/weird-callback': error_and_done(done,
+            'Should not have callback with failed messages.')
       });
       var sendAttempts = 0;
 
